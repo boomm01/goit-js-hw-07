@@ -17,59 +17,13 @@ const galeryCard = galleryItems.map((el) => createGallaryMarcup(el));
 
 galeryEl.insertAdjacentHTML("beforeend", galeryCard.join(""));
 
-galeryEl.addEventListener("click", onImageClick);
 
-
-
-function onImageClick(event) {
-  event.preventDefault();
-
-  if (event.target.nodeName !== "IMG") {
-    return;
-  }
-
-  const lightbox = new SimpleLightbox(".gallery a", {
-   captionsData: "alt",
-   captionsDelay: 250,
- });
-   lightbox.open();
- 
-
-
-  galeryEl.addEventListener("keydown", (event) => {
-    if (event.code === "Escape") {
-      lightbox.close();
-    }
-  });
-}
-
-
-
-
-
-// function onImageClick(event) {
-//    event.preventDefault();
- 
-//    if (event.target.nodeName !== "IMG") {
-//      return;
-//    }
- 
-//    const lightbox = new SimpleLightbox(".gallery a", {
-//     captionsData: "alt",
-//     captionsDelay: 250,
-//   });
-//     lightbox.on('show.simplelightbox', function(){
-//       lightbox.open();
-//     });
+const lightbox = new SimpleLightbox(".gallery a", {
+  captionsData: "alt",
+  captionsDelay: 250,
+});
   
- 
- 
-//    galeryEl.addEventListener("keydown", (event) => {
-//      if (event.code === "Escape") {
-//       lightbox.on('close.simplelightbox', function(){
-//          lightbox.close();
-//        });
-//      }
-//    });
-//  }
- 
+
+
+
+

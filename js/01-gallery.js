@@ -36,7 +36,7 @@ function onImageClick(event) {
   }
 
   const instance = basicLightbox.create(
-    `<img src='${event.target.dataset.source}' width = '800' heigth = '600'`
+    `<img src='${event.target.dataset.source}' width = '800' heigth = '600'/>`
   );
   instance.show();
 
@@ -44,5 +44,5 @@ function onImageClick(event) {
     if (event.code === "Escape") {
       instance.close();
     }
-  });
+  }, {once: true});
 }
